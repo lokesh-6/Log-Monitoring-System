@@ -1,0 +1,15 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - E:/Project_4/logs/*.log
+    fields:
+      app_name: "system_logs"
+
+output.logstash:
+  hosts: ["logstash:5044"]
+
+setup.kibana:
+  host: "http://kibana:5601"
+  username: "elastic"
+  password: "changeme"
